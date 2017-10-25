@@ -1,0 +1,15 @@
+#include <iostream>
+
+class vector2D {
+public:
+  double x,y;
+};
+
+int main(void)
+{
+  vector2D a;
+  std::cout << a.x <<"\t"<< a.y <<std::endl;
+
+  return 0;
+
+}

@@ -1,0 +1,18 @@
+#include<iostream>
+#include<vector>
+
+int main()
+{
+  int N=0;
+  std::cout<<"ingrese el tamaño del arreglo"<<std::endl;
+  std::cin>>N;
+  
+  int *array=nullptr;
+  array= new int [N];
+  
+    
+
+    return 0;
+}
+
+  

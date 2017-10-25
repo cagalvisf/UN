@@ -1,0 +1,10 @@
+git init inicializar
+git config --global user.name
+git config --global user.email
+git add 'filename'
+git commit -m
+export https_proxy="https://cagalvisf:CRIStian970724@proxyapp.unal.edu.co:8080/"
+
+git remote add origin "link repostorio"
+git push origin master
+git pull

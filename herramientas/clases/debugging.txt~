@@ -1,0 +1,3 @@
+          warning	 	debugging	oprimizacion
+
+g++ 	-Wall -Werror		 -g		-o2

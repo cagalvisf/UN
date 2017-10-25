@@ -1,0 +1,7 @@
+
+
+
+warning		-Wall -Werror
+debugging	-g
+oprimizacion	-o2
+sanitaizer  	-fsanitaize= address or undefined or leak

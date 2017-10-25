@@ -1,0 +1,28 @@
+#include<iostream>
+#include<cmath>
+
+int main()
+{
+  double under =1.0;
+  double over=1;
+  int N=0,M=0;
+  int p=1;
+ while( p =! 1)
+   {
+      N++;
+      under=under/2;
+      p= 1+under;
+      
+      std::cout<<N<<" "<<under<<std::endl;      
+    }
+ while(over<std::pow(2,10000000000))
+   {
+     M++;
+     over=over*2;
+     
+     std::cout<<M<<" "<<over<<std::endl;
+   }
+ std::cout<<" under: "<<N<<"\n over: "<<M<<std::endl;
+  
+  return 0;
+}
