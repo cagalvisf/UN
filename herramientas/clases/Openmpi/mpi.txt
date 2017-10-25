@@ -1,0 +1,9 @@
+compile algorithm
+   gcc *.c -lmpi
+   mpicc *.c  (easier)
+   
+   To run use -mpirun-:
+
+         mpirun -np 4(cantidad de procesos) -host "host1","host2" ./a.out
+
+look for your ID with /sbin/ifconfig
