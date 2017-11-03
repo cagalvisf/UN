@@ -78,7 +78,7 @@ void print (const Matrix & m){
   
   for (int ii=0;ii<N;ii++){
     for (int jj = 0; jj < N; jj++){
-      std::cout << ii*delta << "" ""<< jj*delta <<" "<<m[ii*N + jj]<< "\n";
+      std::cout << ii*delta << " "<< jj*delta <<" "<<m[ii*N + jj]<< "\n";
     }
     std::cout<< "\n";
   }
