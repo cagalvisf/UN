@@ -3,7 +3,7 @@
 #include<vector>
 
 const double L = 1.479;
-const double delta = 0.1;
+const double delta = 0.01;
 const int N = 1 + int(L/delta);
 const int steps = 400;
 
@@ -11,19 +11,21 @@ typedef std::vector<double> Matrix;
 
 void print (const Matrix & m);
 void boundary_conditions(Matrix & m);
-void charge_density(Matrix & m);
+//void charge_density(Matrix & m);
 void initial_conditions(Matrix & m);
 void plot_gnuplot(const Matrix & m);
 void init_gnuplot(void);
 void evolve(Matrix & m);
+
 int main(){
+
   init_gnuplot();
  
   Matrix array(N*N);
   
   initial_conditions(array);
   boundary_conditions (array);
-  charge_density(array);
+  // charge_density(array);
   for(int ii = 0; ii<=steps; ii++){
     evolve(array);
      plot_gnuplot(array);
@@ -71,7 +73,7 @@ void evolve(Matrix & m){
       if(ii == N-1) continue;
       if(jj == 0) continue;
       if(jj == N-1) continue;
-      if (ii == N-7 && (2 <= jj < N-2)) continue;
+     // if (ii == N-7 && (2 <= jj < N-2)) continue;
 
 
       m[ii*N + jj]= (m[(ii + 1)*N + jj] +
@@ -90,13 +92,13 @@ void print (const Matrix & m){
     std::cout<< "\n";
   }
 }
-void charge_density(Matrix & m){
+/*void charge_density(Matrix & m){
   int ii= 0, jj=0;
   ii = N-7;
   for (jj = 2; jj < N-2; ++jj)
     m[ii*N + jj]=42;
 
-}
+    }*/
 
 void init_gnuplot(void)
 {
