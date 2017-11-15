@@ -2,22 +2,32 @@
 #include<cmath>
 #include<cstdlib>
 
+const int NTRASIENT = 100;
+
 //call: ./a.out  N R
 int main(int argc, char **argv){
 
-  const int N = std::atoi(argv[1]);
-  const double R = std::atof(argv[2]);
+ 
+  const double RMIN = std::atof(argv[1]);
+  const double RMAX = std::atof(argv[2]);
+  const int  NR = std::atoi(argv[4]);
+  const int NITER = NTRASIENT + std::atoi(argv[3]);
+  const double DELTA = (RMAX-RMIN)/NR;
   
-  double x0 = 0.12;
-  double xto = x0;
+ 
   
-  for(int ii=0 ; ii < N+1; ii++){
+  for(int iR = 0; iR < NR+1 ; iR++){
+    double x = 0.12;
+    double R= RMIN+DELTA*iR;
     
-    double xtn=R*xto*(1-xto);
-    
-    std::cout<<xto<<"\t"<<xtn<<std::endl;
-
-    xto = xtn;
+    for(int ii = 1 ; ii < NTRASIENT ; ii++){
+      x = R*x*(1-x);
+   
+    }
+    for(int ii = NTRASIENT ; ii <= NITER ; ii++){
+      x = R*x*(1-x);
+      std::cout << R << "\t" << x << "\n";
+    }
   }
   return 0;
 }
